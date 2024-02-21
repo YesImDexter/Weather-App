@@ -5,6 +5,7 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     /* outline: red 1px solid; */
+    text-decoration: none;
 }
 
 body {
@@ -35,14 +36,60 @@ body {
     box-shadow: 0 4px black;
 }
 
-h1 {
-    margin: 15px 5px;
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.left .image{
+    margin: 0 10px;
+    width: 65px;
+    height: 65px;
+    background-color: #F85A2A;
+    border-radius: 50%;
+    background-image: url("/src/me.png");
+    background-size: cover; /* Use background-size: cover to make the background image cover the entire container */
+}
+
+.det-name{
+    font-size: 20px;
+}
+
+.det-other{
+    font-size: 15px;
+}
+
+.card-title {
+    margin: 5px 0 15px 5px;
 }
 
 .row{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.spacebetween{
+    justify-content: space-between;
+}
+
+.button-me {
+    box-sizing: border-box;
+    height: 45px;
+    width: auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+
+    border-radius: 15px;
+    border: 2px solid black;
+    background: #F9BB08;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
 }
 
 #input-search {
@@ -88,6 +135,10 @@ h1 {
 }
 
 /* EFFECTS */
+
+.button-me:hover {
+    box-shadow: 0 2px black;
+}
 
 #button-search:hover {
     box-shadow: 0 2px black;
