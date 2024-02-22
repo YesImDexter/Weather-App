@@ -1,16 +1,28 @@
 const btnSearch = document.getElementById("button-search");
 const inputSearch = document.getElementById("input-search");
 
-function getData(){
+const root = document.documentElement;
 
-    var location = [
-        ["Kuching", 26, 92],
-        ["Sibu", 26, 93],
-        ["Bintulu", 27, 89],
-        ["Mukah", 27, 87],
-        ["Kota Samarahan", 26, 93],
-    ];
+//Get the toggle button
 
+const toggle = document.getElementById("toggle");
+
+// Get the user's preference from localStorage
+const darkMode = localStorage.getItem("dark-mode");
+
+// Check if the user has already chosen a theme
+if (darkMode) {
+  // If yes, apply it to the root element
+  root.classList.add("dark-theme");
 }
-
-btnSearch.addEventListener("click", getData());
+// Add an event listener to the toggle button
+toggle.addEventListener("click", () => {
+  // Toggle the dark-theme class on the root element
+  root.classList.toggle("dark-theme");
+  // Store or remove the user's preference in localStorage
+  if (root.classList.contains("dark-theme")) {
+    localStorage.setItem("dark-mode", true);
+  } else {
+    localStorage.removeItem("dark-mode");
+  }
+});
