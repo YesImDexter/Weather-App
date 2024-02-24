@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <button class="button-mode" id="toggle"> &#9728; </button>
 
     <div class="container">
@@ -21,7 +20,7 @@
                         <h1 class="details-name">
                             Dexter Skudd
                         </h1>
-                        <p class="details-other"> Coding Enthusiast </p>
+                        <p class="details-other">&#128187; Web Developer </p>
                     </div>
                 </div>
 
@@ -33,36 +32,43 @@
             <h1 class="card-title"> Search For A Country </h1>
             <div class="row">
                 <input spellcheck="false" id="input-search">
-                <button id="button-search"> &#x1F50E;&#xFE0E; </button>
+                <button id="button-search" onclick="getWeather()"> &#x1F50E;&#xFE0E; </button>
             </div>
         </div>
 
-        <div class="sm-container">
+        <div class="sm-container" id="info">
             <div class="weather-art">
             </div>
             <div class="row spacebetween">
-                <h1 class="card-title">
-                    Malaysia
+                <h1 class="card-title" id="name">
+                    Country
                 </h1>
                 <h1 class="card-title">
-                    31<span> °C</span>
+                    <span id="temp">00</span> °C
                 </h1>
             </div>
             <div class="weather-info">
                 <ul>
                     <li class="row spacebetween">
-                        <p>Humidity</p><span>89</span>
+                        <p>Weather</p><span id="weather">null</span>
                     </li>
                     <li class="row spacebetween">
-                        <p>Windspeed</p><span>24km/h</span>
+                        <p>Description</p><span id="desc">null</span>
+                    </li>
+                    <li class="row spacebetween">
+                        <p>Humidity</p><span id="humidity">00</span>
+                    </li>
+                    <li class="row spacebetween">
+                        <p>Windspeed</p>
+                        <div><span id="wind">00</span> m/h</div>
                     </li>
                 </ul>
             </div>
         </div>
 
-        <div class="sm-container">
+        <div class="sm-container" id="prompt">
             <h1 class="card-title"> Country Does Not Exist! </h1>
-            <p class="prompt"> Please Try Again</p>
+            <p class="prompt"> Please try again, the API calls only fetch the exact country name. &#128073;&#128072; hehe</p>
         </div>
     </div>
 </body>

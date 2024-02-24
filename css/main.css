@@ -4,13 +4,19 @@
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    /* outline: red 1px solid; */
+    outline: red 1px solid;
     text-decoration: none;
-    transition: 0.6s ease-in-out all;
+    transition:
+        0.6s ease-in-out background-color,
+        0.6s ease-in-out text,
+        0.6s ease-in-out color,
+        0.6s ease-in-out border,
+        0.6s ease-in-out outline,
+        0.6s ease-in-out box-shadow;
 }
 
 
-:root{
+:root {
     --bg-color: #FEF4CB;
     --text: black;
     --container: #fff;
@@ -21,7 +27,7 @@
     --shadow: black;
 }
 
-.dark-theme{
+.dark-theme {
     --bg-color: #121212;
     --text: #fff;
     --container: #2D3250;
@@ -37,24 +43,31 @@ body {
     background-color: var(--bg-color);
     justify-content: center;
     /* margin-top: 200px; */
-    height: 100vh;
+    height: 100%;
     transition: 0.5s ease-in-out all;
 }
 
-p, span, h1{
-    color: var(--text)
+p,
+span,
+h1 {
+    color: var(--text);
 }
 
 .container {
     display: block;
+
+    height: 100%;
+    padding: 20px 10px;
+    width: 500px;
+    min-width: 300px;
 }
 
 .sm-container {
     margin-top: 15px;
     background-color: var(--container);
     height: auto;
+    width: auto;
 
-    min-width: 300px;
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -65,12 +78,12 @@ p, span, h1{
     box-shadow: 0 3px var(--shadow);
 }
 
-.left{
+.left {
     display: flex;
     align-items: center;
 }
 
-.left .image{
+.left .image {
     margin: 0 10px;
     width: 65px;
     height: 65px;
@@ -79,10 +92,11 @@ p, span, h1{
     border: 2px solid var(--border);
 
     background-image: url("/src/me.png");
-    background-size: cover; /* Use background-size: cover to make the background image cover the entire container */
+    background-size: cover;
+    /* Use background-size: cover to make the background image cover the entire container */
 }
 
-.weather-art{
+.weather-art {
     width: auto;
     height: 150px;
 
@@ -92,11 +106,11 @@ p, span, h1{
     background-color: var(--highlight1);
 }
 
-.details-name{
+.details-name {
     font-size: 20px;
 }
 
-.details-other{
+.details-other {
     font-size: 15px;
 }
 
@@ -105,17 +119,17 @@ p, span, h1{
     margin: 5px 0 5px 5px;
 }
 
-.prompt{
+.prompt {
     margin: 5px 0 10px 5px;
 }
 
-.row{
+.row {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.spacebetween{
+.spacebetween {
     justify-content: space-between;
 }
 
@@ -123,8 +137,9 @@ p, span, h1{
     box-sizing: border-box;
     height: 45px;
     width: auto;
-    padding: 0 15px;
+    padding: 0 10px;
     display: flex;
+
     align-items: center;
 
     color: var(--text);
@@ -207,11 +222,11 @@ p, span, h1{
     transition: all 0.5s ease-in-out;
 }
 
-.weather-info ul{
+.weather-info ul {
     list-style: none;
 }
 
-.weather-info ul li{
+.weather-info ul li {
     background-color: var(--highlight2);
     border: 2px solid var(--border);
     margin: 0 0 10px 0;
@@ -220,13 +235,23 @@ p, span, h1{
     border-radius: 10px;
 }
 
+#desc::first-letter{
+    text-transform:capitalize;
+}
+
+.weather-info ul li div{
+    color: var(--text);
+}
+
 /* EFFECTS */
 
 .button-me:hover {
+    transform: translateY(-3px);
     box-shadow: 0 3px var(--shadow);
 }
 
 #button-search:hover {
+    transform: translateY(-3px);
     box-shadow: 0 3px var(--shadow);
 }
 
@@ -235,5 +260,6 @@ p, span, h1{
 }
 
 #input-search:focus {
-    box-shadow: 0 3px var(--shadow);
+    transform: translateY(-3px);
+    box-shadow: 0 4px var(--shadow);
 }
