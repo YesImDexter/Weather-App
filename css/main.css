@@ -91,7 +91,7 @@ h1 {
     border-radius: 50%;
     border: 2px solid var(--border);
 
-    background-image: url("/src/me.png");
+    background-image: url("/me.png");
     background-size: cover;
     /* Use background-size: cover to make the background image cover the entire container */
 }
