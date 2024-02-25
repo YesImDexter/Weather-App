@@ -81,22 +81,22 @@ function getWeather() {
 
       switch (data.weather[0].main) {
         case "Clear":
-          weatherico.src = "../src/Clear.png"
+          weatherico.src = "./src/Clear.png"
           break;
         case "Clouds":
-          weatherico.src = "../src/Clouds.png"
+          weatherico.src = "./src/Clouds.png"
           break;
         case "Drizzle":
-          weatherico.src = "../src/Drizzle.png"
+          weatherico.src = "./src/Drizzle.png"
           break;
         case "Mist":
-          weatherico.src = "../src/Mist.png"
+          weatherico.src = "./src/Mist.png"
           break;
         case "Rain":
-          weatherico.src = "../src/Rain.png"
+          weatherico.src = "./src/Rain.png"
           break;
         case "Snow":
-          weatherico.src = "../src/Snow.png"
+          weatherico.src = "./src/Snow.png"
           break;
       }
 
