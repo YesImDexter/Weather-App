@@ -1,5 +1,6 @@
 const inputSearch = document.getElementById("input-search");
 const btnSearch = document.getElementById("button-search");
+const darkLogo = document.getElementById("darkicon");
 
 const root = document.documentElement;
 
@@ -16,11 +17,14 @@ const darkMode = localStorage.getItem("dark-mode");
 if (darkMode) {
   // If yes, apply it to the root element
   root.classList.add("dark-theme");
+  changeIcon();
 }
 // Add an event listener to the toggle button
 toggle.addEventListener("click", () => {
   // Toggle the dark-theme class on the root element
   root.classList.toggle("dark-theme");
+  changeIcon();
+
   // Store or remove the user's preference in localStorage
   if (root.classList.contains("dark-theme")) {
     localStorage.setItem("dark-mode", true);
@@ -28,6 +32,16 @@ toggle.addEventListener("click", () => {
     localStorage.removeItem("dark-mode");
   }
 });
+
+function changeIcon() {
+    if (root.classList.contains("dark-theme")){
+        darkicon.classList.remove("fa-moon");
+        darkicon.classList.add("fa-sun");
+      } else {
+        darkicon.classList.remove("fa-sun");
+        darkicon.classList.add("fa-moon");
+      }
+}
 
 // Function to handle "Enter" key press
 inputSearch.addEventListener("keypress", function (event) {
@@ -45,7 +59,7 @@ function getWeather() {
   document.getElementById("prompt").style.display = "none";
 
   //LMAO IM TOO LAZY TO HIDE MY API KEY< PLEASE DONT STEAL IT
-  const APIToken = "5b6ddf2fc7a4a520ef84c3317aaf5e1c";
+  const APIToken = process.env.API_KEY;
 
   const apiUrl = "http://api.openweathermap.org/data/2.5/weather?q="+inputSearch.value+"&units=metric"+"&appid="+APIToken;
 

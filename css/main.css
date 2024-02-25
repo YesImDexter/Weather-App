@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    outline: red 1px solid;
+    font-family: 'Poppins';
+    /* outline: red 1px solid; */
     text-decoration: none;
     transition:
-        0.6s ease-in-out background-color,
-        0.6s ease-in-out text,
-        0.6s ease-in-out color,
-        0.6s ease-in-out border,
-        0.6s ease-in-out outline,
-        0.6s ease-in-out box-shadow;
+        0.5s ease-in background-color,
+        0.5s ease-in text,
+        0.5s ease-in color,
+        0.5s ease-in border,
+        0.5s ease-in outline,
+        0.5s ease-in box-shadow,
+        0.5s ease-in transform;
 }
 
 
 :root {
+    --icon: #0bd3e5;
     --bg-color: #FEF4CB;
     --text: black;
     --container: #fff;
@@ -28,11 +28,12 @@
 }
 
 .dark-theme {
-    --bg-color: #121212;
+    --icon: #0bd3e5;
+    --bg-color: #092635;
     --text: #fff;
-    --container: #2D3250;
-    --highlight1: #F85A2A;
-    --highlight2: #F9BB08;
+    --container: #1B4242;
+    --highlight1: #5C8374;
+    --highlight2: #5C8374;
     --border: #fff;
     --outline: #fff;
     --shadow: #fff;
@@ -87,12 +88,9 @@ h1 {
     margin: 0 10px;
     width: 65px;
     height: 65px;
-    background-color: var(--highlight1);
     border-radius: 50%;
-    border: 2px solid var(--border);
 
-    background-image: url(../me.png);
-    background-size: cover;
+    border: 3px solid var(--border);
     /* Use background-size: cover to make the background image cover the entire container */
 }
 
@@ -173,7 +171,7 @@ h1 {
     border-radius: 15px;
 
     border: 2px solid var(--border);
-    background: #0bd3e5;
+    background: var(--icon);
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
@@ -183,6 +181,7 @@ h1 {
 
     box-sizing: border-box;
     height: 60px;
+    font-weight: 500;
     padding-left: 5%;
     width: 95%;
 
@@ -227,6 +226,8 @@ h1 {
 }
 
 .weather-info ul li {
+    font-weight: 600;
+    cursor: pointer;
     background-color: var(--highlight2);
     border: 2px solid var(--border);
     margin: 0 0 10px 0;
@@ -262,4 +263,9 @@ h1 {
 #input-search:focus {
     transform: translateY(-3px);
     box-shadow: 0 4px var(--shadow);
+}
+
+.weather-info ul li:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px var(--shadow);
 }
