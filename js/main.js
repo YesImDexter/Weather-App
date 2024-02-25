@@ -78,6 +78,7 @@ function getWeather() {
     .then(data => {
 
       infoContainer.style.display = "flex";
+      setTimeout(100);
       infoContainer.classList.add("animate__fadeInUp");
 
       switch (data.weather[0].main) {
@@ -115,6 +116,7 @@ function getWeather() {
       console.error("There was a problem with the fetch operation");
 
       document.getElementById("prompt").style.display = "flex";
+      setTimeout(100);
       document.getElementById("prompt").classList.add("animate__bounceIn");
     })
 }

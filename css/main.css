@@ -160,6 +160,8 @@ h1 {
 }
 
 .button-mode {
+    z-index: 1;
+
     box-sizing: flex;
     height: 45px;
     width: 50px;
