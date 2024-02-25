@@ -59,7 +59,7 @@ function getWeather() {
   document.getElementById("prompt").style.display = "none";
 
   //LMAO IM TOO LAZY TO HIDE MY API KEY< PLEASE DONT STEAL IT
-  const APIToken = process.env.API_KEY;
+  const APIToken = "5b6ddf2fc7a4a520ef84c3317aaf5e1c";
 
   const apiUrl = "http://api.openweathermap.org/data/2.5/weather?q="+inputSearch.value+"&units=metric"+"&appid="+APIToken;
 
