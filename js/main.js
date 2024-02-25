@@ -1,11 +1,14 @@
 const inputSearch = document.getElementById("input-search");
 const btnSearch = document.getElementById("button-search");
 const darkLogo = document.getElementById("darkicon");
+const weatherico = document.getElementById("weather-icon")
 
 const root = document.documentElement;
 
 document.getElementById("info").style.display = "none";
 document.getElementById("prompt").style.display = "none";
+
+const infoContainer = document.getElementById("info");
 
 //Get the toggle button
 const toggle = document.getElementById("toggle");
@@ -34,13 +37,13 @@ toggle.addEventListener("click", () => {
 });
 
 function changeIcon() {
-    if (root.classList.contains("dark-theme")){
-        darkicon.classList.remove("fa-moon");
-        darkicon.classList.add("fa-sun");
-      } else {
-        darkicon.classList.remove("fa-sun");
-        darkicon.classList.add("fa-moon");
-      }
+  if (root.classList.contains("dark-theme")) {
+    darkicon.classList.remove("fa-moon");
+    darkicon.classList.add("fa-eye");
+  } else {
+    darkicon.classList.remove("fa-eye");
+    darkicon.classList.add("fa-moon");
+  }
 }
 
 // Function to handle "Enter" key press
@@ -58,10 +61,10 @@ function getWeather() {
   document.getElementById("info").style.display = "none";
   document.getElementById("prompt").style.display = "none";
 
-  //LMAO IM TOO LAZY TO HIDE MY API KEY< PLEASE DONT STEAL IT
+  //LMAO IM TOO LAZY TO HIDE MY API KEY >w< PLEASE DONT STEAL IT
   const APIToken = "5b6ddf2fc7a4a520ef84c3317aaf5e1c";
 
-  const apiUrl = "http://api.openweathermap.org/data/2.5/weather?q="+inputSearch.value+"&units=metric"+"&appid="+APIToken;
+  const apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + inputSearch.value + "&units=metric" + "&appid=" + APIToken;
 
   fetch(apiUrl)
     .then(response => {
@@ -73,9 +76,29 @@ function getWeather() {
       return response.json();
     })
     .then(data => {
-      console.log(data);
 
-      document.getElementById("info").style.display = "flex";
+      infoContainer.style.display = "flex";
+
+      switch (data.weather[0].main) {
+        case "Clear":
+          weatherico.src = "../src/Clear.png"
+          break;
+        case "Clouds":
+          weatherico.src = "../src/Clouds.png"
+          break;
+        case "Drizzle":
+          weatherico.src = "../src/Drizzle.png"
+          break;
+        case "Mist":
+          weatherico.src = "../src/Mist.png"
+          break;
+        case "Rain":
+          weatherico.src = "../src/Rain.png"
+          break;
+        case "Snow":
+          weatherico.src = "../src/Snow.png"
+          break;
+      }
 
       //clear, clouds, drizzle, mist, rain, snow
 
@@ -93,4 +116,3 @@ function getWeather() {
       document.getElementById("prompt").style.display = "flex";
     })
 }
-// 2.5/forecast?id=524901&appid={API key}
